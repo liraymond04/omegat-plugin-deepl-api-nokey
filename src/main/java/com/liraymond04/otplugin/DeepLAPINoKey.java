@@ -54,11 +54,9 @@ public class DeepLAPINoKey extends BaseCachedTranslate {
             return cachedResult;
         }
 
-        try {
-            return DeeplAPI.translate(sLang.getLanguageCode(), tLang.getLanguageCode(), text);
-        } catch (Exception e) {
-            return res.getString("ERROR_CONTACT") + e.getMessage();
-        }
+        String result = DeeplAPI.translate(sLang.getLanguageCode(), tLang.getLanguageCode(), text);
+        putToCache(sLang, tLang, text, result);
+        return result;
     }
 
     @Override
