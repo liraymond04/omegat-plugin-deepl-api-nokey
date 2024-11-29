@@ -1,0 +1,9 @@
+build
+.gradle
+.DS_Store
+
+# java lsp env
+.settings
+.classpath
+.project
+bin
